@@ -1,0 +1,4 @@
+import("~/code/cross-platform-fastlane/fastlane/Fastfile")
+
+skip_docs # Do not create fastlane/README.txt
+
