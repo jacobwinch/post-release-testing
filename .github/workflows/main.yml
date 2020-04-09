@@ -15,10 +15,6 @@ jobs:
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
-
-            - name: setup build number
-              run: echo "::set-env name=BUILD_NUMBER::$[GITHUB_RUN_NUMBER+17734]"
-            - name: print env var
+            - name: test options
               run: |
-                  echo "Using env var from previous step:"
-                  echo $BUILD_NUMBER      
+                echo github.event_name    
