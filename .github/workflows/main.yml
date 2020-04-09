@@ -17,9 +17,7 @@ jobs:
         steps:
 
             - name: setup build number
-              run: |
-                  build_number=$[GITHUB_RUN_NUMBER+17734]
-                  ::set-env name={BUILD_NUMBER}::{$build_number}
+              run: echo "::set-env name={BUILD_NUMBER}::{$[GITHUB_RUN_NUMBER+17734]}"
             - name: print env var
               run: |
                   echo "Using env var from previous step:"
