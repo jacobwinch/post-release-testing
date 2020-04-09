@@ -17,4 +17,4 @@ jobs:
         steps:
             - name: test options
               run: |
-                echo github.event_name    
+                echo ${{ github.event_name }}    
