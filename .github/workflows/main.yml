@@ -15,5 +15,4 @@ jobs:
         steps:
             - name: test options
               run: |
-                echo $GITHUB_EVENT_NAME
-                less $GITHUB_EVENT_PATH | jq '.deployment.environment'    
+                echo ${{ github.event.deployment.environment }}  
