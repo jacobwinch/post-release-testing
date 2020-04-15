@@ -16,4 +16,4 @@ jobs:
             - name: test options
               run: |
                 echo $GITHUB_EVENT_NAME
-                less $GITHUB_EVENT_PATH | jq '.environment'    
+                less $GITHUB_EVENT_PATH | jq '.event.environment'    
