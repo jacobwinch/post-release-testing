@@ -15,5 +15,5 @@ jobs:
         steps:
             - name: test options
               run: |
-                echo ${{ github.event_name }}
-                echo ${{ toJson(github.event) }} | jq '.environment'    
+                echo $GITHUB_EVENT_NAME
+                less $GITHUB_EVENT_PATH | jq '.environment'    
