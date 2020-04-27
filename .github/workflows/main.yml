@@ -15,4 +15,4 @@ jobs:
         steps:
             - name: test options
               run: |
-                echo ${{ contains(github.event.deployment.environment, 'external-beta') }}  
+                echo ${{ github.event.deployment.id }}  
