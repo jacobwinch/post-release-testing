@@ -1,0 +1,14 @@
+name: Deployment status
+
+on:
+  deployment_status
+
+jobs:
+    deployment:
+      if: ${{ github.event.deployment_status.state == 'failure' }}
+      runs-on: ubuntu-latest
+      timeout-minutes: 10
+      steps:
+          - name: test
+            run: |
+                echo "Hello world"
