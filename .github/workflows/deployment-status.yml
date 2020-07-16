@@ -1,14 +1,13 @@
-name: Deployment status
+name: Test manual trigger
 
 on:
-  deployment_status
+  workflow_dispatch:
 
 jobs:
-    deployment:
-      if: ${{ github.event.deployment_status.state == 'failure' }}
-      runs-on: ubuntu-latest
-      timeout-minutes: 10
-      steps:
-          - name: test
-            run: |
-                echo "Hello world"
+  hello-world:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+        - name: test
+          run: |
+              echo "Hello world"
