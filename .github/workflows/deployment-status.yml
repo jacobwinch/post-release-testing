@@ -2,6 +2,10 @@ name: Test manual trigger
 
 on:
   workflow_dispatch:
+    inputs:
+      deployment-environment:
+        required: true
+        description: Which environment should the build be released to? 
 
 jobs:
   hello-world:
@@ -10,4 +14,4 @@ jobs:
     steps:
         - name: test
           run: |
-              echo "Hello world"
+              echo "Hello world ${{ github.event.inputs.deployment-environment }}"
