@@ -11,3 +11,5 @@ jobs:
         - name: test
           run: |
               echo `date`
+          env: 
+            TZ: "/usr/share/zoneinfo/Europe/London"
