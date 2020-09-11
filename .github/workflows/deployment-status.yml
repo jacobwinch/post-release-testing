@@ -2,7 +2,7 @@ name: Test PR events
 
 on:
   pull_request: 
-    types: [labelled, synchronize]
+    types: [labeled, synchronize]
 
 jobs:
   hello-world:
