@@ -5,6 +5,7 @@ on:
     types: [labeled]
 
 jobs:
+  if: ${{ github.event.label.id == 2340250864 }}
   hello-world:
     runs-on: ubuntu-latest
     timeout-minutes: 10
