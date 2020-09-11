@@ -1,7 +1,8 @@
 name: Test manual trigger
 
 on:
-  workflow_dispatch:
+  pull_request: 
+    types: [labelled]
 
 jobs:
   hello-world:
@@ -10,4 +11,4 @@ jobs:
     steps:
         - name: test
           run: |
-              echo "Hello world"
+              echo ${{ github.event }}
