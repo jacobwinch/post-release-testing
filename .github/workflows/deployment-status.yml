@@ -1,8 +1,8 @@
-name: Test manual trigger
+name: Test PR events
 
 on:
   pull_request: 
-    types: [labelled]
+    types: [labelled, synchronize]
 
 jobs:
   hello-world:
