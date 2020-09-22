@@ -5,7 +5,7 @@ on:
 
 jobs:
   hello-world:
-    if: ${{ github.event.deployment.environment == 'external-beta' }}
+    if: ${{ contains(github.event.deployment.environment, 'beta') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
