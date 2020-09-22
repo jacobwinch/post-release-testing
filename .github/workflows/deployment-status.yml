@@ -1,11 +1,11 @@
 name: Test deployment trigger
 
 on:
-  deployment:
+  deployment_status:
 
 jobs:
   hello-world:
-    if: ${{ contains(github.event.deployment.environment, 'beta') }}
+    if: ${{ github.event.deployment_status.state == 'failure' && github.event.deployment.environment == 'external-beta') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
