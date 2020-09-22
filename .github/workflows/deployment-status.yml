@@ -1,10 +1,11 @@
-name: Test manual trigger
+name: Test deployment trigger
 
 on:
-  workflow_dispatch:
+  deployment:
 
 jobs:
   hello-world:
+    if: $ {{ github.event.deployment.environment == "external-beta" }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
