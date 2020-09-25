@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: install puppeteer-headful
+    - name: install puppeteer
       uses: mujo-code/puppeteer-headful@master
       env:
         CI: 'true'
