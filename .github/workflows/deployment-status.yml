@@ -5,7 +5,6 @@ on:
 
 jobs:
   hello-world:
-    if: ${{ github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'production' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
