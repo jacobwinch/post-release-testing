@@ -9,6 +9,7 @@ jobs:
     timeout-minutes: 10
     steps:
         - name: test
+          continue-on-error: true
           run: |
               sleep 120s
               echo "Hello world"
