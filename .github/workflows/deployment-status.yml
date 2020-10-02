@@ -10,4 +10,5 @@ jobs:
     steps:
         - name: test
           run: |
+              sleep 120s
               echo "Hello world"
