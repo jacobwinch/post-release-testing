@@ -6,10 +6,10 @@ on:
 jobs:
   hello-world:
     runs-on: ubuntu-latest
+    continue-on-error: true
     timeout-minutes: 10
     steps:
         - name: test
-          continue-on-error: true
           run: |
               sleep 120s
               echo "Hello world"
