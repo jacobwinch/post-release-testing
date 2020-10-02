@@ -11,4 +11,5 @@ jobs:
     steps:
         - name: test
           run: |
-              echo "Hello world ${{ github.event.deployment.ref }}"
+              TEST=$(git show-ref master --hash)
+              echo "Hello world "
