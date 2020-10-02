@@ -9,6 +9,8 @@ jobs:
     timeout-minutes: 10
     steps:
         - uses: actions/checkout@v2
+          with:
+            fetch-depth: 100
         - name: test
           run: |
               TEST=$(git show-ref master --hash)
