@@ -1,14 +1,13 @@
-name: Test deployment trigger
+name: Test
 
 on:
-  deployment_status:
+  pull_request:
 
 jobs:
   hello-world:
-    if: ${{ github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'production' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
         - name: test
           run: |
-              echo "Hello world ${{ github.event.deployment.ref }}"
+              echo "Hello world"
