@@ -14,5 +14,22 @@ jobs:
           with:
             issue-number: ${{ github.event.pull_request.number }}
             body-includes: <!-- github-actions-screenshots -->
-        - name: Log
-          run: echo ${{ steps.fc.outputs.comment-id }}
+        - name: Create
+          if: ${{ steps.fc.outputs.comment-id == '' }} 
+          uses: peter-evans/create-or-update-comment@v1
+          with:
+            issue-number: ${{ github.event.pull_request.number }}
+            body: |
+              <!-- github-actions-screenshots -->
+              Create
+        - name: Update
+          if: ${{ steps.fc.outputs.comment-id != '' }} 
+          uses: peter-evans/create-or-update-comment@v1
+          with:
+            comment-id: ${{ steps.fc.outputs.comment-id }}
+            body: |
+              <!-- github-actions-screenshots -->
+              Update
+            edit-mode: replace  
+
+            
