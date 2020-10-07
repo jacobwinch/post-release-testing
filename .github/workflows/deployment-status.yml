@@ -12,6 +12,7 @@ jobs:
           uses: peter-evans/find-comment@v1
           id: fc
           with:
+            issue-number: ${{ github.event.pull_request.number }}
             body-includes: <!-- github-actions-screenshots -->
         - name: Log
           run: echo ${{ steps.fc.outputs.comment-id }}
